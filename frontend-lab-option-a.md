@@ -1,5 +1,6 @@
 # Frontend Activity — Product Store
 
+> [!NOTE]  
 > This is **option-A** version of the frontend lab. It contains the same goals, specifications, and expected outcomes but does not include code solutions. If you need step-by-step guidance, [refer to the beginner version.](./frontend-lab-option-b.md)
 
 

@@ -1,5 +1,10 @@
 # Frontend Activity — Product Store (Beginner-Friendly)
 
+> [!NOTE]  
+> This is **option-B** of the frontend lab. It contains the same goals and specifications as *option-A*, with the difference that this version provides code solutions.
+
+----
+
 **Part 1 (Iterations 0–5)** — Build a full CRUD front-end:
 - A clear, **step‑by‑step walkthrough** for building the app.
 - By the end of Part 1, you will have a fully functional React Frontend connected to an API.

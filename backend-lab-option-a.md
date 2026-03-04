@@ -1,6 +1,9 @@
 # Product API: Part 1 - Backend activity 
 
+> [!NOTE]  
 > This is **option-A** of the backend lab. It contains the same goals and specifications but does not include code solutions. If you need step-by-step guidance, [refer to the beginner version](./backend-lab-option-b.md).
+
+----
 
 - [Part 1 — CRUD API (Iterations 0–5)](#part-1--product-api-expert)
 - [Part 2 — Authentication & Route Protection (Iterations 6–7)](#part-2-authentication--route-protection)
