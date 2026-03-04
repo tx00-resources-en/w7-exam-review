@@ -11,6 +11,7 @@
 **Part 3 (Iteration 8)** — Refactor with custom hooks:
 - **Iteration 8:** Extract reusable logic into custom hooks (`useField`, `useSignup`, `useLogin`). Replace repetitive `useState` + `onChange` pairs with `useField` and inline `fetch` calls with `useSignup` / `useLogin`.
 
+----
 
 ## Part 1: Overview
 

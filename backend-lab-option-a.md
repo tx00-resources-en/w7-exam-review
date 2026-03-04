@@ -1,13 +1,13 @@
 # Product API: Part 1 - Backend activity 
 
-> **This is the expert version of the backend lab.** It contains the same goals and specifications but does not include code solutions. If you need step-by-step guidance, refer to the beginner version (`backend-lab.md`).
+> **This is the option-a of the backend lab.** It contains the same goals and specifications but does not include code solutions. If you need step-by-step guidance, refer to the beginner version (`backend-lab-option-b.md`).
 
-- [Part 1 — CRUD API (Iterations 0–5)](#)
-- [Part 2 — Authentication & Route Protection (Iterations 6–7)](#)
+- [Part 1 — CRUD API (Iterations 0–5)](#part-1--product-api-expert)
+- [Part 2 — Authentication & Route Protection (Iterations 6–7)](#part-2-authentication--route-protection)
 
 ------------
 
-# Backend Activity — Product API (Expert)
+# Part 1:  Product API (Expert)
 
 ## Overview
 
@@ -72,7 +72,7 @@ Here is the API you are building.
 }
 ```
 
-> **Tip:** Test each endpoint with VS Code REST Client, Postman, or `curl` as you build it.
+> **Tip:** Test each endpoint with Postman as you build it.
 
 ## Instructions
 
@@ -96,7 +96,7 @@ Here is the API you are building.
 
 4. **Test the placeholder routes:**
    
-   Open a REST client and make a request:
+   Open Postman and make a request:
    ```http
    GET http://localhost:4000/api/products
    ```
@@ -261,7 +261,7 @@ Content-Type: application/json
 
 -----------
 
-# Backend Activity — Product API Part 2 (Authentication & Route Protection)
+# Part 2 (Authentication & Route Protection)
 
 ## Overview
 

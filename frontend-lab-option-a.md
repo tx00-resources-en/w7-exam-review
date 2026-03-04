@@ -1,6 +1,6 @@
-# Frontend Activity — Product Store (Expert)
+# Frontend Activity — Product Store
 
-> **This is the expert version of the frontend lab.** It contains the same goals, specifications, and expected outcomes but does not include code solutions. If you need step-by-step guidance, refer to the beginner version (`frontend-lab.md`).
+> **This is option-a version of the frontend lab.** It contains the same goals, specifications, and expected outcomes but does not include code solutions. If you need step-by-step guidance, refer to the beginner version (`frontend-lab-option-a.md`).
 
 **Part 1 (Iterations 0–5)** — Build a full CRUD front-end:
 - Build a React frontend connected to an Express + MongoDB API.

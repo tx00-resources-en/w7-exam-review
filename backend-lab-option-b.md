@@ -1,12 +1,12 @@
 # Product API: Part 1 - Backend activity 
 
 
-- [Part 1 — CRUD API (Iterations 0–5)](#)
-- [Part 2 — Authentication & Route Protection (Iterations 6–7)](#)
+- [Part 1 — CRUD API (Iterations 0–5)](#part-1-product-api-beginner-friendly)
+- [Part 2 — Authentication & Route Protection (Iterations 6–7)](#part-2-authentication--route-protection)
 
 ------------
 
-# Backend Activity — Product API (Beginner-Friendly)
+# Part 1: Product API (Beginner-Friendly)
 
 ## Overview
 
@@ -75,7 +75,7 @@ Here is the API you are building.
 }
 ```
 
-> **Tip:** Test each endpoint with VS Code REST Client, Postman, or `curl` as you build it.
+> **Tip:** Test each endpoint with Postman as you build it.
 
 ## Instructions
 
@@ -99,7 +99,7 @@ Here is the API you are building.
 
 4. **Test the placeholder routes:**
    
-   Open a REST client and make a request:
+   Open Postman and make a request:
    ```http
    GET http://localhost:4000/api/products
    ```
@@ -418,7 +418,7 @@ Content-Type: application/json
 
 -----------
 
-# Backend Activity — Product API Part 2 (Authentication & Route Protection)
+# Part 2 (Authentication & Route Protection)
 
 ## Overview
 
