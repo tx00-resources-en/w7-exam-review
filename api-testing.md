@@ -1,7 +1,7 @@
 
 ## Testing Product API Endpoints
 
-In this lab you will add automated **integration tests** to an existing Express + MongoDB REST API that manages **products**. You will use **Jest** as the test runner and **Supertest** to make HTTP requests against your Express app without starting a real server.
+In this lab you will add automated **integration tests** to the **products** API. You will use **Jest** as the test runner and **Supertest** to make HTTP requests against your Express app without starting a real server.
 
 By the end of the lab you will have tests covering:
 
@@ -404,7 +404,7 @@ git commit -m "feat: add signup and login tests for users API"
 
 ### Part 3 — Protected Product Endpoint Tests
 
-Now you will test **all five CRUD endpoints** for products. Unlike the user endpoints, most product routes are **protected** — they require a valid JWT token in the `Authorization` header. This means your tests must first obtain a token by signing up a user, and then include it with each protected request.
+Now you will test **all five CRUD endpoints** for products. Unlike the user endpoints, most product routes are **protected**. They require a valid JWT token in the `Authorization` header. This means your tests must first obtain a token by signing up a user, and then include it with each protected request.
 
 **Step 1:** Create a new test file:
 
