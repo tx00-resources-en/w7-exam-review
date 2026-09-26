@@ -49,8 +49,7 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    // Make describe, test, expect, beforeEach, afterAll, etc.
-    // available globally, similar to Jest.
+    // Make describe, test, expect, beforeEach, afterAll, etc. available globally.
     globals: true,
 
     // Backend tests should run in Node.
