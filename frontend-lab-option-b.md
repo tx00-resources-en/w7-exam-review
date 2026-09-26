@@ -1448,3 +1448,4 @@ export default Login;
 - Why must custom hook names start with `use`?
 - What does the spread operator (`{...email}`) do when applied to an `<input>` element?
 - What are the **advantages** of extracting `useSignup` and `useLogin` into hooks instead of keeping the `fetch` logic inside each component?
+

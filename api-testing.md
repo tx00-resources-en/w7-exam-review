@@ -1,7 +1,7 @@
 
 ## Testing Product API Endpoints
 
-In this lab you will add automated **integration tests** to the **products** API. You will use **Jest** as the test runner and **Supertest** to make HTTP requests against your Express app without starting a real server.
+In this lab you will add automated **integration tests** to the **products** API. You will use **Vitest** as the test runner and **Supertest** to make HTTP requests against your Express app without starting a real server.
 
 By the end of the lab you will have tests covering:
 
@@ -12,7 +12,7 @@ By the end of the lab you will have tests covering:
 
 ## PART 1 — Project & Test Setup
 
-Before writing any tests, we need to install the required tooling and configure the project so Jest can run properly alongside our Express server.
+Before writing any tests, we need to install the required tooling and configure the project so Vitest can run properly alongside our Express server.
 
 ### 1.1 Install test dependencies
 
@@ -20,69 +20,55 @@ We need two packages, both as **dev dependencies** (`-D`) since they are only us
 
 | Package | Purpose |
 |---------|---------|
-| **jest** | JavaScript test runner — discovers test files, runs them, and reports results |
+| **Vitest** | JavaScript test runner — discovers test files, runs them, and reports results |
 | **supertest** | Lets you make HTTP requests (GET, POST, PUT, DELETE) against an Express `app` object directly, without starting the server on a port |
 
 ```bash
-npm install jest supertest cross-env -D
+npm install Vitest supertest cross-env -D
 ```
 
 ### 1.2 Add a test script
 
-Open `package.json` and make sure you have a `test` script. We use **cross-env** to set `NODE_ENV=test` so the app can connect to a separate test database. The `--runInBand` flag tells Jest to run test files sequentially (important when tests share a database).
+Open `package.json` and make sure you have a `test` script. We use **cross-env** to set `NODE_ENV=test` so the app can connect to a separate test database.
 
 ```json
 "scripts": {
-  "test": "cross-env NODE_ENV=test node --experimental-vm-modules node_modules/jest/bin/jest.js --verbose --runInBand"
+  "test": "cross-env NODE_ENV=test vitest run"
 }
 ```
 
 > **Why `cross-env`?** Setting environment variables differs between Windows (`set VAR=val`) and Unix (`VAR=val`). `cross-env` handles this for you on any OS. If you don't already have it, install it: `npm install cross-env`
 
-### 1.3 Configure Jest
+### 1.3 Configure Vitest
 
-Add a `"jest"` section to your `package.json` (or create a `jest.config.js` file). Two settings are important:
 
-| Setting | Why |
-|---------|-----|
-| `testEnvironment: "node"` | Tells Jest we are testing a Node.js app (not a browser app) |
-| `globalTeardown` | Points to a script that runs **after all test suites finish**, giving us a place to cleanly exit the process |
-
-```json
-"jest": {
-  "testEnvironment": "node",
-  "globalTeardown": "./tests/teardown.js"
-}
-```
-
-Now create the teardown file:
-
-**`tests/teardown.js`**
+vitest.config.mjs
 
 ```js
-module.exports = () => {
-  process.exit(0);
-};
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  test: {
+    // Make describe, test, expect, beforeEach, afterAll, etc.
+    // available globally, similar to Jest.
+    globals: true,
+
+    // Backend tests should run in Node.
+    environment: 'node',
+
+    // Prevent test files from running in parallel.
+    // This is useful when multiple test files share a MongoDB database.
+    fileParallelism: false,
+
+    // Optional: give database operations enough time to complete.
+    testTimeout: 20000,
+  },
+})
 ```
-
-> **Why do we need this?** Without it, Jest may hang after tests complete because the MongoDB connection (or other async handles) keeps the Node.js process alive. The teardown forces a clean exit.
-
-### 1.4 Suppress deprecation warnings (optional)
-
-Some transitive dependencies still use older versions of `glob` and `minimatch`, which print deprecation warnings. You can silence them by adding `overrides` to `package.json` (see the [package.json](./backend/package.json) in this repo for reference):
-
-```json
-"overrides": {
-  "glob": "^13.0.0",
-  "minimatch": "^10.2.1"
-}
-```
-
-After adding overrides, run `npm install` once more so npm resolves the new versions.
 
 ### 1.5 Verify the setup
 
-Create a quick sanity-check test to make sure Jest is wired up:
+Create a quick sanity-check test to make sure Vitest is wired up:
 
 **`tests/mock.test.js`**
 
@@ -130,7 +116,7 @@ npm run dev
 
 Stop the server with `Ctrl+C` once you see "Connected to MongoDB".
 
-**Step 4:** Verify Jest is still working:
+**Step 4:** Verify Vitest is still working:
 
 ```bash
 npm test
@@ -1206,3 +1192,4 @@ afterAll(async () => {
 </details>
 
 ---------
+

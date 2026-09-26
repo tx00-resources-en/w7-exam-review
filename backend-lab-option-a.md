@@ -742,3 +742,4 @@ You have extended the Product API with authentication and route protection:
 | `models/productModel.js` | **Updated** — Added `user_id` field referencing User |
 | `controllers/productControllers.js` | **Updated** — `createProduct` saves `user_id` from authenticated user |
 | `routes/productRouter.js` | **Updated** — Applied `requireAuth` middleware to POST, PUT, DELETE |
+
